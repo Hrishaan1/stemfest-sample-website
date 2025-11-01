@@ -1,1 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STEMFest Robotics Expo 2025</title>
+    <meta name="description" content="Join the Future of Robotics at STEMFest 2025 — a celebration of innovation, creativity, and collaboration." />
+
+    <!-- Google Font: Poppins (weights 400,600,700) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS CDN (for quick prototype / deployable static site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root{
+        --primary: #1E3A8A; /* deep blue */
+        --accent: #3B82F6;  /* bright blue */
+        --bg: #F9FAFB;
+        --text: #111827;
+      }
+      html,body{font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+      .gradient-btn{background: linear-gradient(90deg,var(--primary),var(--accent));}
+    </style>
+  </head>
+  <body class="bg-[var(--bg)] text-[var(--text)] leading-relaxed antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50">
+      <nav class="backdrop-blur bg-white/70 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <a class="text-xl font-bold text-[var(--primary)]" href="#">STEMFest Robotics</a>
+          <button id="nav-toggle" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <ul id="nav-menu" class="hidden md:flex gap-6 items-center">
+            <li><a href="#home" class="hover:underline">Home</a></li>
+            <li><a href="#schedule" class="hover:underline">Schedule</a></li>
+            <li><a href="#teams" class="hover:underline">Teams</a></li>
+            <li><a href="#sponsors" class="hover:underline">Sponsors</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-6">
+          <ul class="space-y-4">
+            <li><a href="#home" class="block">Home</a></li>
+            <li><a href="#schedule" class="block">Schedule</a></li>
+            <li><a href="#teams" class="block">Teams</a></li>
+            <li><a href="#sponsors" class="block">Sponsors</a></li>
+            <li><a href="#contact" class="block">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+
+      <!-- HERO -->
+      <section id="home" class="relative py-20 px-6 rounded-2xl overflow-hidden">
+        <div class="absolute inset-0">
+          <!-- Background image from Unsplash (robotics-themed) - replace with your preferred image -->
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Robotics background" class="w-full h-full object-cover brightness-50">
+          <div class="absolute inset-0 bg-gradient-to-b from-[rgba(30,58,138,0.45)] to-[rgba(59,130,246,0.15)]"></div>
+        </div>
+
+        <div class="relative text-center text-white py-24">
+          <h1 class="text-3xl md:text-5xl font-bold max-w-3xl mx-auto">Join the Future of Robotics at STEMFest 2025</h1>
+          <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">A celebration of innovation, creativity, and collaboration.</p>
+
+          <!-- Countdown -->
+          <div class="mt-8 inline-grid grid-cols-4 gap-4 text-center bg-white/10 rounded-2xl px-4 py-3 shadow-lg max-w-sm mx-auto">
+            <div>
+              <div id="days" class="text-2xl font-bold">00</div>
+              <div class="text-sm">Days</div>
+            </div>
+            <div>
+              <div id="hours" class="text-2xl font-bold">00</div>
+              <div class="text-sm">Hours</div>
+            </div>
+            <div>
+              <div id="minutes" class="text-2xl font-bold">00</div>
+              <div class="text-sm">Minutes</div>
+            </div>
+            <div>
+              <div id="seconds" class="text-2xl font-bold">00</div>
+              <div class="text-sm">Seconds</div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-center gap-4">
+            <a href="#register" class="gradient-btn rounded-full px-6 py-3 text-white font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(59,130,246,0.25)]">Register Now</a>
+            <a href="#schedule" class="rounded-full px-6 py-3 bg-white text-[var(--primary)] font-semibold transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl">View Schedule</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="py-20 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl font-bold">About STEMFest</h2>
+            <p class="mt-4 text-lg">STEMFest Robotics Expo brings together young innovators, engineers, and creators to showcase their projects and compete in hands-on challenges.</p>
+            <p class="mt-4">Expect interactive exhibits, mentorship sessions, and competitions across robotics platforms. Open to students, educators, families, and industry partners.</p>
+            <a href="#contact" class="mt-6 inline-block gradient-btn rounded-full px-6 py-3 text-white font-semibold transition-all duration-300 ease-in-out">Learn More</a>
+          </div>
+          <div class="rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+            <!-- Placeholder image - replace with event/team photo -->
+            <img src="https://images.unsplash.com/photo-1581091012184-7a2f1b4f1c1f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="About STEMFest" class="w-full h-64 object-cover">
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section id="schedule" class="py-20 px-6">
+        <h2 class="text-2xl font-bold text-center">Event Schedule</h2>
+        <p class="text-center mt-2 max-w-2xl mx-auto">A day packed with showcases, challenges, and inspiration.</p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card -->
+          <article class="bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 class="font-semibold text-lg">Opening Ceremony</h3>
+            <time class="text-sm text-gray-500">9:00 AM</time>
+            <p class="mt-2 text-sm">Kickoff with keynote speakers and an overview of the day.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 class="font-semibold text-lg">Team Showcases</h3>
+            <time class="text-sm text-gray-500">10:30 AM</time>
+            <p class="mt-2 text-sm">Teams present their projects on the main floor.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 class="font-semibold text-lg">Robotics Challenges</h3>
+            <time class="text-sm text-gray-500">1:00 PM</time>
+            <p class="mt-2 text-sm">Hands-on competitions across multiple categories.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 class="font-semibold text-lg">Awards Ceremony</h3>
+            <time class="text-sm text-gray-500">4:00 PM</time>
+            <p class="mt-2 text-sm">Recognizing outstanding teams, mentors, and volunteers.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TEAMS -->
+      <section id="teams" class="py-20 px-6">
+        <h2 class="text-2xl font-bold text-center">Participating Teams</h2>
+        <p class="text-center mt-2 max-w-2xl mx-auto">Meet some of the teams bringing robotics to life.</p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Repeatable team card (6 placeholders) -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="h-40 bg-gray-100 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Team photo" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">FTC Team #1234</h3>
+              <p class="text-sm text-gray-600 mt-1">Innovators United</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="h-40 bg-gray-100 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Team photo" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">RoboHigh #42</h3>
+              <p class="text-sm text-gray-600 mt-1">Circuit Breakers</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="h-40 bg-gray-100 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Team photo" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Tech Titans</h3>
+              <p class="text-sm text-gray-600 mt-1">Automation Pioneers</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="h-40 bg-gray-100 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Team photo" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Circuit Crew</h3>
+              <p class="text-sm text-gray-600 mt-1">Design & Control</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="h-40 bg-gray-100 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Team photo" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Mech Masters</h3>
+              <p class="text-sm text-gray-600 mt-1">Precision Builders</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div class="h-40 bg-gray-100 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Team photo" class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Alpha Bots</h3>
+              <p class="text-sm text-gray-600 mt-1">Strategy & Speed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPONSORS -->
+      <section id="sponsors" class="py-20 px-6 bg-gray-50">
+        <h2 class="text-2xl font-bold text-center">Our Sponsors</h2>
+        <p class="text-center mt-2 max-w-2xl mx-auto">Proud partners supporting the next generation of innovators.</p>
+
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
+          <!-- Placeholder sponsor logos -->
+          <div class="p-6 bg-white rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg">
+            <svg class="w-24 h-12 text-gray-300" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="200" height="60" rx="12" fill="#E5E7EB" />
+            </svg>
+          </div>
+          <div class="p-6 bg-white rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg">
+            <svg class="w-24 h-12 text-gray-300" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="200" height="60" rx="12" fill="#E5E7EB" />
+            </svg>
+          </div>
+          <div class="p-6 bg-white rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg">
+            <svg class="w-24 h-12 text-gray-300" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="200" height="60" rx="12" fill="#E5E7EB" />
+            </svg>
+          </div>
+          <div class="p-6 bg-white rounded-2xl flex items-center justify-center transition-all duration-300 hover:shadow-lg">
+            <svg class="w-24 h-12 text-gray-300" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="200" height="60" rx="12" fill="#E5E7EB" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGISTRATION -->
+      <section id="register" class="py-20 px-6 rounded-2xl mt-8" style="background:linear-gradient(90deg,var(--primary),var(--accent));">
+        <div class="max-w-3xl mx-auto text-center text-white py-12 shadow-lg rounded-2xl">
+          <h2 class="text-2xl font-bold">Register for STEMFest 2025</h2>
+          <p class="mt-4">Join as a participant, volunteer, or sponsor — we can’t wait to see your innovation in action!</p>
+          <!-- Placeholder Google Form link: replace with your form -->
+          <a href="https://forms.gle/placeholder" target="_blank" rel="noopener" class="mt-6 inline-block rounded-full px-6 py-3 text-white font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]">Register Now</a>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-bold text-center">Contact Us</h2>
+          <p class="text-center mt-2">Questions about the event? Reach out — we'd love to hear from you.</p>
+
+          <form action="https://formspree.io/f/your-form-id" method="POST" class="mt-8 bg-white rounded-2xl shadow-lg p-6 grid gap-4">
+            <!-- Replace `your-form-id` above with your Formspree form ID -->
+            <label class="sr-only" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required class="rounded-xl border border-gray-200 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" />
+
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required class="rounded-xl border border-gray-200 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]" />
+
+            <label class="sr-only" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help?" required class="rounded-xl border border-gray-200 p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"></textarea>
+
+            <button type="submit" class="gradient-btn rounded-full px-6 py-3 text-white font-semibold transition-all duration-300 ease-in-out">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-12 bg-[var(--primary)] text-white">
+      <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h3 class="font-bold text-xl">STEMFest Robotics</h3>
+          <p class="mt-2 text-sm">Inspiring the next generation of robotics leaders.</p>
+        </div>
+
+        <div class="flex justify-center">
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="hover:underline">Home</a></li>
+            <li><a href="#schedule" class="hover:underline">Schedule</a></li>
+            <li><a href="#teams" class="hover:underline">Teams</a></li>
+            <li><a href="#sponsors" class="hover:underline">Sponsors</a></li>
+          </ul>
+        </div>
+
+        <div class="text-sm">
+          <p>Contact: <a href="mailto:info@stemfest.example" class="underline">info@stemfest.example</a></p>
+          <div class="flex gap-3 mt-4">
+            <!-- Simple social icons -->
+            <a href="#" class="hover:underline" aria-label="GitHub">
+              <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.76 5.47.76 11.74c0 4.98 3.29 9.2 7.86 10.69.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.35-1.3-1.71-1.3-1.71-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.11-.76.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.19.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.5 3.17-1.19 3.17-1.19.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.8 1.08.8 2.18 0 1.57-.01 2.83-.01 3.22 0 .31.21.68.8.56 4.57-1.49 7.86-5.71 7.86-10.69C23.24 5.47 18.27.5 12 .5z"/></svg>
+            </a>
+            <a href="#" class="hover:underline" aria-label="LinkedIn">
+              <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85v5.5H9.45V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.55v6.69zM5.34 7.43a2.06 2.06 0 11.01-4.12 2.06 2.06 0 01-.01 4.12zM6.88 20.45H3.8V9h3.08v11.45z"/></svg>
+            </a>
+            <a href="mailto:info@stemfest.example" class="hover:underline" aria-label="Email">
+              <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[rgba(0,0,0,0.08)] text-white py-3">
+        <div class="max-w-6xl mx-auto px-6 text-sm">&copy; 2025 STEMFest Robotics Expo</div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile nav toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      navToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // close mobile menu on navigation
+            if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+          }
+        });
+      });
+
+      /*
+        Countdown Timer
+        - Update `eventDate` to your event's date/time (YYYY-MM-DDTHH:MM:SS in local time or ISO string)
+        - This displays days, hours, minutes, seconds in elements with IDs: days, hours, minutes, seconds
+      */
+      // Set your event date/time here:
+      const eventDate = new Date('2025-11-15T09:00:00'); // <-- update event date/time here
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = eventDate - now;
+        if (diff <= 0) {
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          clearInterval(countdownInterval);
+          return;
+        }
+        const seconds = Math.floor((diff / 1000) % 60);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      // Initialize countdown and set interval
+      updateCountdown();
+      const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>
 
